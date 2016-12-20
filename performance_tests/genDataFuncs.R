@@ -1,5 +1,3 @@
-# Functions to generate data and time nearest neighbours algorithms
-
 # Functions to generate data
 genSeqData <- function(numSamples, numFeatures, numQueries, randomSeed) {
   
