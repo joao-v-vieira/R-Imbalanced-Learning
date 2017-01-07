@@ -1,4 +1,4 @@
-# Functions to generate data and time nearest neighbours algorithms
+# Functions to time nearest neighbours algorithms
 
 # Load packages
 library(microbenchmark)
