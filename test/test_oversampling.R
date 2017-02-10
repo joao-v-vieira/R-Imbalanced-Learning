@@ -9,7 +9,7 @@ test_that("Test output", {
   input_col_number <- ncol(input_matrix)
   
   # Ouput parameters
-  output_matrix <- over_sampling(input_matrix, 20)
+  output_matrix <- random_oversampling(input_matrix, 20)
   output_col_number <- ncol(output_matrix)
   output_row_number <- nrow(output_matrix)
   
