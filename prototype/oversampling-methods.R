@@ -1,4 +1,4 @@
-RandomOversampling <- function(numSamples, sd){
+random_oversampling <- function(numSamples, sd){
   #consider that last variable is the variable to predict
                 
   #detect minority class
