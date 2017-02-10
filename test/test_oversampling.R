@@ -1,6 +1,6 @@
 library(testthat)
 
-source("over-sampling-methods.R")
+source("../prototype/oversampling-methods.R")
 input_matrix <- as.matrix(read.csv("../datasets/iris.csv"))
 
 test_that("Test output", {
