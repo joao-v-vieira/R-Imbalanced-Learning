@@ -1,5 +1,5 @@
 # Functions to generate data
-genSeqData <- function(numSamples, numFeatures, numQueries, randomSeed) {
+gen_seq_data <- function(num_samples, num_features, num_queries, random_seed) {
   
   # Generates a matrix and random queries indices. Every row of the 
   # matrix is a vector of dimension equal to numFeatures and a
@@ -9,27 +9,27 @@ genSeqData <- function(numSamples, numFeatures, numQueries, randomSeed) {
   # of the generated matrix.
   #
   # Args:
-  #   numSamples: The number of rows for the generated matrix.
-  #   numFeatures: The number of columns for the generated matrix.
-  #   numQueries: the number of rows of the query matrix.
-  #   randomSeed: The random state used in sample functions.
+  #   num_samples: The number of rows for the generated matrix.
+  #   num_features: The number of columns for the generated matrix.
+  #   num_queries: the number of rows of the query matrix.
+  #   random_seed: The random state used in sample functions.
   #
   # Returns:
-  #   A list which contains the inputMatrix and the queryMatrix.
+  #   A list which contains the input_matrix and the query_matrix.
   
   # Set random state
-  set.seed((randomSeed))
+  set.seed((random_seed))
   
   # Create sequential matrix
-  inputMatrix <- matrix(rep(1:numSamples), numFeatures, nrow = numSamples)
+  input_matrix <- matrix(rep(1:num_samples), num_features, nrow = num_samples)
   
   # Shuffle matrix rows
-  shuffledIndices <- sample(numSamples)
-  inputMatrix <- inputMatrix[shuffledIndices, ]
+  shuffled_indices <- sample(num_samples)
+  input_matrix <- input_matrix[shuffled_indices, ]
   
   # Choose a random query matrix
-  queriesIndices <- sample(numSamples, numQueries)
-  queryMatrix <- inputMatrix[queriesIndices, , drop = FALSE]
+  queries_indices <- sample(num_samples, num_queries)
+  query_matrix <- inputMatrix[queries_indices, , drop = FALSE]
   
-  return(list(inputMatrix = inputMatrix, queryMatrix = queryMatrix))
+  return(list(input_matrix = input_matrix, query_matrix = query_matrix))
 }

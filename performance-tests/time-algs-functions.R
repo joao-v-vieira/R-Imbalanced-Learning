@@ -4,23 +4,23 @@
 library(microbenchmark)
 
 # Function to time nearest neighbours algorithm
-timeAlgorithm <- function(inputMatrix, queryMatrix, k, knnFunction, numEvaluations, ...) {
+time_algorithm <- function(input_matrix, query_matrix, k, knn_function, num_evaluations, ...) {
   
   # Calculates statistics for the execution time of a nearest 
-  # neighbour algorithm that uses the knnFunction for k neighbours, 
-  # inputMatrix as the input matrix and queryMatrix as the query
-  # matrix. The process is repeated numEvaluations times.
+  # neighbour algorithm that uses the knn_function for k neighbours, 
+  # input_matrix as the input matrix and query_matrix as the query
+  # matrix. The process is repeated num_evaluations times.
   #
   # Args:
-  #   inputMatrix: The input matrix.
-  #   queryMatrix: The query matrix.
+  #   input_matrix: The input matrix.
+  #   query_matrix: The query matrix.
   #   k: The number of nearest neighbours.
-  #   knnFunction: The nearest neighbour function.
-  #   numEvaluations: The number of experiment evaluations.
+  #   knn_function: The nearest neighbour function.
+  #   num_evaluations: The number of experiment evaluations.
   #
   # Returns:
   #   An object of class "microbenchmark".
   
-  timingResults <- microbenchmark(knnFunction(inputMatrix, queryMatrix, k, ...), times = numEvaluations)
-  return(timingResults)
+  timing_results <- microbenchmark(knn_function(input_matrix, query_matrix, k, ...), times = num_evaluations)
+  return(timing_results)
 }
