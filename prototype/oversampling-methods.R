@@ -6,10 +6,10 @@ random_oversampling <- function(input_matrix, num_samples){
   #if mean < 0.5, 1 is minority
   minority_class <- NULL
   
-  if (mean(input_matrix[,ncol(input_matrix)] < 0.5)){
+  if (mean(input_matrix [, ncol (input_matrix)]) < 0.5){
     minority_class <- 1
-  } else if (mean(input_matrix[,ncol(input_matrix)]) > 0.5){
-  minority_class <- 0
+  } else if (mean(input_matrix [, ncol(input_matrix)]) > 0.5){
+    minority_class <- 0
   } else {
     stop("Data set is perfectly balanced!")
   }
