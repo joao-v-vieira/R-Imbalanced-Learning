@@ -19,13 +19,12 @@ random_oversampling <- function(input_matrix, num_samples){
   if (num_samples > 0){
     random_rows <- NULL
     #create num_samples rows with randomnly chosen rows which last variable has the minority class
-    random_rows <- as.integer(sample(row.names(subset(input_matrix, input_matrix[, ncol(input_matrix)] == minority_class)), num_samples, replace = TRUE))
-    output_matrix <- input_matrix[random_rows,]
-    #fix the number of rows index
-    row.names(output_matrix) <- 1:nrow(output_matrix)
+    target_rows <- which(input_matrix [, ncol(input_matrix)] == minority_class, arr.ind = TRUE)
+    random_rows <- sample(target_rows, num_samples, replace = TRUE)
+    output_matrix <- input_matrix[random_rows, ]
   }
   
-  rm(random_rows)
+  rm(target_rows, random_rows)
   
   #return the randomly copied dataset rows
   return (output_matrix)
