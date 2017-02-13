@@ -1,4 +1,4 @@
-# ImbalancedLearning: R package for undersampling and oversampling of imbalanced data sets
+# R-Imbalanced-Learning: R package for undersampling and oversampling of imbalanced data sets
 
 The aim of the project is to provide an R package that implements a variety of undersampling and oversampling algorithms. The implementation should include parallelization (multi-core and multi-node) as an option for performance and scalability.
 
