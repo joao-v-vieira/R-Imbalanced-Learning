@@ -1,6 +1,10 @@
-random_oversampling <- function(input_matrix, num_samples){
+random_oversampling <- function(input_matrix, num_samples = NULL){
+
+if (is.null(num_samples)) {
+ num_samples = length(subset(input_matrix[, ncol(input_matrix)],input_matrix[, ncol(input_matrix)] == 0 )) - length(subset(input_matrix[, ncol(input_matrix)],input_matrix[, ncol(input_matrix)] == 1 )) 
+}  
+  
   #consider that last variable is the variable to predict
-                
   #detect minority class
   #if mean > 0.5, 0 is minority
   #if mean < 0.5, 1 is minority
