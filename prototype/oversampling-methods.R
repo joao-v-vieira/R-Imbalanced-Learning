@@ -1,6 +1,7 @@
 random_oversampling <- function(input_matrix, num_samples = NULL, only_generated_data = FALSE){
 
-if (is.null(num_samples)) {
+if(length(unique(input_matrix[,ncol(input_matrix)]))==2)   {
+  if (is.null(num_samples)) {
  num_samples = length(subset(input_matrix[, ncol(input_matrix)],input_matrix[, ncol(input_matrix)] == 0 )) - length(subset(input_matrix[, ncol(input_matrix)],input_matrix[, ncol(input_matrix)] == 1 )) 
 }  
   
@@ -31,5 +32,9 @@ if(only_generated_data){
   output_matrix <- rbind(input_matrix, output_matrix)
   return(output_matrix)
 }
+}else{
+    
+    message("Not a binary variable set as target")
+  }
   
 }
