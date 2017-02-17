@@ -1,4 +1,4 @@
-random_oversampling <- function(input_matrix, num_samples = NULL, only_generated_data = FALSE){
+random_oversampling <- function(input_matrix, num_samples = NULL, only_generated_data = TRUE) {
 
   
 #is there is not value assigned to num_samples then the default value is one that perfectly balances the dataset
