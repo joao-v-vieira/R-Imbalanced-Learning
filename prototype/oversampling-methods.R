@@ -13,17 +13,6 @@ random_oversampling <- function(input_matrix, num_samples = NULL, only_generated
       num_samples = length(majority_class_indices) - length(minority_class_indices)
     }  
     
-    # Check class distribution
-    if (length(minority_class_indices) - length(majority_class_indices)) {
-      minority_class <- 1
-    } 
-    else if (length(majority_class_indices) - length(minority_class_indices)) {
-      minority_class <- 0
-    } 
-    else {
-      stop("Data set is perfectly balanced!")
-    }
-    
     # Generate data as exact copies of current minority class data
     if (num_samples > 0) {
       random_minority_indices <- sample(minority_class_indices, num_samples, replace = TRUE)
